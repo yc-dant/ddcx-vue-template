@@ -1,4 +1,4 @@
-# ddcx-vue-tempalte
+# "<%=name%>"
 
 h5 模版
 
