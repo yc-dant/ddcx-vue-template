@@ -1,9 +1,9 @@
 /*
- * @Descripttion: 
+ * @Descripttion: 请求配置文件
  * @Author: 杨晨
  * @Date: 2021-05-29 20:04:29
  * @LastEditors: 杨晨
- * @LastEditTime: 2021-05-29 20:08:23
+ * @LastEditTime: 2021-06-01 20:32:55
  */
 import packAxios from './configAxios'
 import url from './url'
@@ -14,25 +14,13 @@ import url from './url'
  * @param {number} pageNum        页码
  * @param {ParamsFilter} filter   查询参数
  */
-interface ParamsFilter {
-  // // 当前用户名
-  // username: string
-  taskId?: string
-  // 枚举备注: INIT :未开始 PROCESSING: 进行中 OVER: 已结束 ABORTED: 已中止
-  status?: string,
-  lifeCycle?: string,
-  marketId?: string
-  name?: string
-  parentId?: string
-}
-export function axiosTaskList(pageSize: number, pageNum: number, filter: ParamsFilter) {
+export function axiosTaskList(pageSize: number, pageNum: number) {
   return packAxios({
     method: 'post',
     url: `${url()}`,
     data: {
       pageSize,
-      pageNum,
-      filter,
+      pageNum
     }
   })
 }
